@@ -1,1 +1,5 @@
-SELECT "title" FROM "episodes" WHERE "air_date" = "2004-12-31";
+SELECT "city", COUNT(*) AS "Number of Public Schools" FROM "schools"
+WHERE "type" = 'Public School'
+GROUP BY "city"
+HAVING "Number of Public Schools" <= 3
+ORDER BY "Number of Public Schools" DESC, city ASC;
